@@ -1,11 +1,12 @@
 import React from "react";
 import Botao from "../button";
+import "./style.scss";
 
 
 const Form = () => {
   return (
-    <form>
-      <div>
+    <form className="novaTarefa">
+      <div className="inputContainer">
         <label htmlFor="tarefa">
           Adicione um novo estudo
         </label>
@@ -17,7 +18,7 @@ const Form = () => {
           required
         />
       </div>
-      <div>
+      <div className="inputContainer">
         <label htmlFor="tempo">
           tempo
         </label>
