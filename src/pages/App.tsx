@@ -1,6 +1,6 @@
 import React from 'react';
-import Form from './components/form';
-import Lista from './components/lista';
+import Form from '../components/form';
+import Lista from '../components/lista';
 
 function App() {
   return (
