@@ -1,8 +1,8 @@
 import React from 'react';
-import './style.scss'
+import style from './Button.module.scss'
 const Botao = () => {
   return (
-    <button className='botao'>Botão</button>
+    <button className={style.botao}>Botão</button>
   )
 }
 
