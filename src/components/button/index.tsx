@@ -1,9 +1,14 @@
 import React from 'react';
 import style from './Button.module.scss'
-const Botao = () => {
-  return (
-    <button className={style.botao}>Botão</button>
-  )
+
+class Botao extends React.Component<{ texto: String }> {
+  render() {
+    return (
+      <button className={style.botao}>
+        {this.props.texto}
+      </button>
+    )
+  }
 }
 
 export default Botao;
