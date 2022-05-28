@@ -1,4 +1,5 @@
 import React from "react";
+import Item from "./item";
 import style from './Lista.module.scss';
 
 function Lista() {
@@ -17,10 +18,17 @@ function Lista() {
       <h2>Estudo do dia</h2>
       <ul>
         {tarefas.map((item,index) =>(
-          <li key={index} className={style.item}>
-            <h3>{item.tarefa}</h3>
-            <span>{item.tempo}</span>
-          </li>
+          <Item 
+             // primeira maneira de  utilizar o pops
+             
+             // tarefa={item.tarefa}
+             // tempo={item.tempo}
+           
+             // Segunda maneira: utiliza todos atributos dentro de um obejeto, como prop para o component
+             key={index} 
+             {...item}
+          />
+
         ))}
       </ul>
     </aside>
