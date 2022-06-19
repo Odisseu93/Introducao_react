@@ -2,6 +2,8 @@ import React from "react";
 import { ITarefa } from "../../types/tarefa";
 import Botao from "../button";
 import style from "./Form.module.scss";
+import {v4 as uuidv4} from 'uuid';
+// uuid documentation https://openbase.com/js/uuid/documentation
 
 
 class Form extends React.Component<{
@@ -14,9 +16,22 @@ class Form extends React.Component<{
   // criando função no class component, não precisa declarar o valor "function"
   adicionarTarefa(evento: React.FormEvent) {
     evento.preventDefault();
-    this.props.setTarefas(tarefasAntigas => [...tarefasAntigas, {...this.state}] )
-    console.log('State: ', this.state);
+    this.props.setTarefas(tarefasAntigas => [
+      ...tarefasAntigas,
+       { 
+        ...this.state,
+        selecionado: false,
+        completado: false,
+        id: uuidv4()
+       }
+      ]
+      )
+    this.setState({
+      tarefa: "",
+      tempo: "00:00"
+    })
   }
+
   render() {
     return (
       <form className={style.novaTarefa} onSubmit={this.adicionarTarefa.bind(this)}>
