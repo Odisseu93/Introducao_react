@@ -4,8 +4,13 @@ import Item from "./item";
 import style from './Lista.module.scss';
 
 
+interface Props {
+  tarefas: ITarefa[],
+  selecionaTarefa: (tarefaSelecionada: ITarefa) => void
+}
+
 // ITarefas foi importa de ../../types/tarefa
-function Lista({ tarefas }: { tarefas: ITarefa[] }) {
+function Lista({ tarefas, selecionaTarefa }: Props) {
  
   return (
     <aside className={style.listaTarefas}>
@@ -13,14 +18,15 @@ function Lista({ tarefas }: { tarefas: ITarefa[] }) {
       <ul>
         {tarefas.map((item,index) =>(
           <Item 
-             // primeira maneira de  utilizar o pops
-             
-             // tarefa={item.tarefa}
-             // tempo={item.tempo}
-           
-             // Segunda maneira: utiliza todos atributos dentro de um obejeto, como prop para o component
-             key={index} 
-             {...item}
+          // primeira maneira de  utilizar o pops
+          
+          // tarefa={item.tarefa}
+          // tempo={item.tempo}
+          
+          // Segunda maneira: utiliza todos atributos dentro de um obejeto, como prop para o component
+          selecionaTarefa={selecionaTarefa}
+          key={item.id} 
+          {...item}
           />
 
         ))}
