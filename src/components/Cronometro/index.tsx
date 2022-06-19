@@ -1,7 +1,7 @@
 import Botao from "../button"
 import Relogio from "./Relogio"
 import style from "./Cronometro.module.scss";
-import { tempoParaSegundos } from "../../common/utils/date";
+import { tempoParaSegundos } from "../../common/utils/time";
 
 export  default function Cronometro() {
   console.log('conversao: ', tempoParaSegundos('01:01:01'));
