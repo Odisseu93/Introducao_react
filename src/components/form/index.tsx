@@ -1,9 +1,12 @@
 import React from "react";
+import { ITarefa } from "../../types/tarefa";
 import Botao from "../button";
 import style from "./Form.module.scss";
 
 
-class Form extends React.Component {
+class Form extends React.Component<{
+  setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>
+}> {
   state = {
     tarefa: "",
     tempo: "00:00"
@@ -11,6 +14,7 @@ class Form extends React.Component {
   // criando função no class component, não precisa declarar o valor "function"
   adicionarTarefa(evento: React.FormEvent) {
     evento.preventDefault();
+    this.props.setTarefas(tarefasAntigas => [...tarefasAntigas, {...this.state}] )
     console.log('State: ', this.state);
   }
   render() {
