@@ -46,7 +46,7 @@ class Form extends React.Component {
             required
           />
         </div>
-        <Botao
+        <Botao type="submit"
           texto={"Adicionar"}
         />
       </form>
