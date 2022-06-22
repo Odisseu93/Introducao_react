@@ -1,4 +1,3 @@
-import { isConstructorDeclaration } from 'typescript';
 import { ITarefa } from '../../../types/tarefa';
 import style from './Item.module.scss';
 
